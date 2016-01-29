@@ -22,6 +22,7 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
+
 /**
  *
  * @author usuario
@@ -52,6 +53,29 @@ public class SoftwareBase implements Serializable {
     @Size(min = 1, max = 20)
     @Column(name = "RELEASE")
     private String release;
+    @Column(name = "FIX")
+    private String fix;
+    @Column(name = "FECHA_FIN_SOPORTE")
+    private java.util.Date fechaFinSoporte;
+    
+    public java.util.Date getFechaFinSoporte() {
+		return fechaFinSoporte;
+	}
+
+	public void setFechaFinSoporte(java.util.Date fechaFinSoporte) {
+		this.fechaFinSoporte = fechaFinSoporte;
+	}
+
+	public String getFix() {
+		return fix;
+	}
+
+	public void setFix(String fix) {
+		this.fix = fix;
+	}
+
+	@Size(max =10)
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idSoftwareBase")
     private Collection<SoftwareBaseInstancia> softwareBaseInstanciaCollection;
 
