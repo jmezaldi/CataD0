@@ -33,9 +33,20 @@
                     <h:inputText id="release" size="60" value="#{softwareBaseController.selected.release}" title="#{bundle.EditSoftwareBaseTitle_release}" required="true" requiredMessage="#{bundle.EditSoftwareBaseRequiredMessage_release}"/>
                     <h:outputLabel value="Fix" for="fix" />
                     <h:inputText id="fix" size="10" value="#{softwareBaseController.selected.fix}" title="#{bundle.EditSoftwareBaseTitle_fix}" required="false" requiredMessage="#{bundle.EditSoftwareBaseRequiredMessage_fix}"/>
+                    <h:outputLabel value="Fabricante" for="idFabricante" />
+                    <p:selectOneMenu id="idFabricante" value="#{softwareBaseController.selected.idFabricante}">
+                        <f:selectItems value="#{fabricanteController.itemsAvailableSelectOne}" var="entry"
+        				itemValue="#{entry}" itemLabel="#{entry.label}" />                        
+                    </p:selectOneMenu> 
                     <h:outputLabel value="Licenciado" for="licenciado" />
-                    <h:inputText id="licenciado" size="10" value="#{softwareBaseController.selected.licenciado}" title="#{bundle.EditSoftwareBaseTitle_licenciado}" required="false" requiredMessage="#{bundle.EditSoftwareBaseRequiredMessage_licenciado}"/>
-                    
+                    <p:selectOneMenu id="licenciado" value="#{softwareBaseController.selected.licenciado}" style="width:60px" >
+			        	<f:selectItem itemLabel="---" itemValue="" />
+			            <f:selectItem itemLabel="Si" itemValue="S" />
+			            <f:selectItem itemLabel="No" itemValue="N" />
+			        </p:selectOneMenu> 
+                    <h:outputLabel value="Fecha de Fin de Soporte (dd-MM-YYYY)" for="fechaFinSoporte" />
+                    <h:inputText id="fechaFinSoporte" size="10" value="#{softwareBaseController.selected.fechaFinSoporte}" title="#{bundle.EditSoftwareBaseTitle_fechaFinSoporte}" required="false" requiredMessage="#{bundle.EditSoftwareBaseRequiredMessage_fechaFinSoporte}">
+                    <f:convertDateTime pattern="dd-MM-yyyy"/></h:inputText>
                     
                     <f:facet name="footer">                    	
                     	<h:outputText value="&#160;" /><h:outputText value="&#160;" />	

@@ -52,7 +52,8 @@
 		<class>com.yanbal.catalogo.bean.SoftwareBaseInstanciaXAplicacionPK</class>
 		<class>com.yanbal.catalogo.bean.SoftwareBaseInstanciaXServidor</class>
 		<class>com.yanbal.catalogo.bean.SoftwareBaseInstanciaXServidorPK</class>
-		<class>com.yanbal.catalogo.bean.Diccionario</class>			
+		<class>com.yanbal.catalogo.bean.Diccionario</class>
+		<class>com.yanbal.catalogo.bean.Fabricante</class>			
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>		
 	    <properties>    
 	    	<property name="openjpa.jdbc.Schema" value="CATALOGO"/>

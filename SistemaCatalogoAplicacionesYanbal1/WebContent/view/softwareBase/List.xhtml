@@ -40,14 +40,17 @@
 						 <p:column headerText="Nombre" filterBy="#{item.nombre}" sortBy="#{item.nombre}" style="width:30%;">
 						 	<h:outputText value="#{item.nombre}" />
 						 </p:column>
-						 <p:column headerText="Release" filterBy="#{item.release}" sortBy="#{item.release}" style="width:10%;">
+						 <p:column headerText="Release" filterBy="#{item.release}" sortBy="#{item.release}" style="width:6%;">
 						 	<h:outputText value="#{item.release}" />
 						 </p:column>
 						 <p:column headerText="Fix" sortBy="#{item.fix}" style="width:8%;">
 						 	<h:outputText value="#{item.fix}" />
 						 </p:column>
-						 <p:column headerText="Fin Soporte"  sortBy="#{item.fechaFinSoporte}" style="width:10%;">
+						 <p:column headerText="Fin Soporte"  sortBy="#{item.fechaFinSoporte}" style="width:6%;">
 						 	<h:outputText value="#{item.fechaFinSoporte}"><f:convertDateTime type="date" pattern="dd-MM-yyyy"/></h:outputText>
+						 </p:column>
+						 <p:column headerText="Fabricante"  sortBy="#{item.idFabricante.nombre}" style="width:6%;">
+						 	<h:outputText value="#{item.idFabricante.nombre}"/>
 						 </p:column>
 						 <p:column headerText="Licenciado" sortBy="#{item.licenciado}" style="width:8%;">
 						 	<h:outputText value="#{item.licenciado}" />

@@ -25,7 +25,6 @@
             </h:panelGroup>
             <h:form>
                 <p:panelGrid columns="2">
-                	<f:facet name="header">FORMULARIO</f:facet>
                     <h:outputText value="ID Software Base"/>
                     <h:outputText value="#{softwareBaseController.selected.id}" title="#{bundle.ViewSoftwareBaseTitle_id}"/>
                     <h:outputText value="Nombre"/>
@@ -37,6 +36,8 @@
                     <h:outputText value="Fecha de Fin de Soporte"/>
                     <h:outputText value="#{softwareBaseController.selected.fechaFinSoporte}" title="#{bundle.ViewSoftwareBaseTitle_fechaFinSoporte}">
                     <f:convertDateTime type="date" pattern="dd-MM-yyyy"/></h:outputText>
+                    <h:outputText value="Fabricante"/>
+                    <h:outputText value="#{softwareBaseController.selected.idFabricante.nombre}" title="#{bundle.ViewServidorTitle_idFabricante}"/>
                     <h:outputText value="¿Licenciado?"/>
                     <h:outputText value="#{softwareBaseController.selected.licenciado}" title="#{bundle.ViewSoftwareBaseTitle_licenciado}"/>
   

@@ -47,6 +47,7 @@
                     <p:outputLabel value="Comentario Interno" for="comentarioInterno" />
                     <p:inputTextarea  id="comentarioInterno" rows="3" cols="70" value="#{servidorController.selected.comentarioInterno}"  />
                     <p:outputLabel value="ID Servidor Físico" for="servidorFisicoId" />
+                    <h:outputText value="Fabricante"/>
                     <p:selectOneMenu id="servidorFisicoId" value="#{servidorController.selected.servidorFisicoId}">
                         <f:selectItems value="#{servidorController.itemsAvailableSelectOne}" var="entry"
         				itemValue="#{entry}" itemLabel="#{entry.label}" />                        

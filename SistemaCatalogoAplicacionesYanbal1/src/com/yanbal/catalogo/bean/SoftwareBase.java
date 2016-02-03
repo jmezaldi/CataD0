@@ -13,6 +13,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -61,8 +63,19 @@ public class SoftwareBase implements Serializable {
     @Column(name = "LICENCIADO")
     @Size(min = 1, max = 10)
     private String licenciado;
+    @JoinColumn(name = "ID_FABRICANTE", referencedColumnName = "ID")
+    @ManyToOne(optional = false)
+    private Fabricante idFabricante;
     
-    public String getLicenciado() {
+    public Fabricante getIdFabricante() {
+		return idFabricante;
+	}
+
+	public void setIdFabricante(Fabricante idFabricante) {
+		this.idFabricante = idFabricante;
+	}
+
+	public String getLicenciado() {
 		return licenciado;
 	}
 
