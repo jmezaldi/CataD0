@@ -32,6 +32,14 @@
                     <h:outputText value="#{softwareBaseController.selected.nombre}" title="#{bundle.ViewSoftwareBaseTitle_nombre}"/>
                     <h:outputText value="Release"/>
                     <h:outputText value="#{softwareBaseController.selected.release}" title="#{bundle.ViewSoftwareBaseTitle_release}"/>
+                    <h:outputText value="Fix"/>
+                    <h:outputText value="#{softwareBaseController.selected.fix}" title="#{bundle.ViewSoftwareBaseTitle_fix}"/>
+                    <h:outputText value="Fecha de Fin de Soporte"/>
+                    <h:outputText value="#{softwareBaseController.selected.fechaFinSoporte}" title="#{bundle.ViewSoftwareBaseTitle_fechaFinSoporte}">
+                    <f:convertDateTime type="date" pattern="dd-MM-yyyy"/></h:outputText>
+                    <h:outputText value="¿Licenciado?"/>
+                    <h:outputText value="#{softwareBaseController.selected.licenciado}" title="#{bundle.ViewSoftwareBaseTitle_licenciado}"/>
+  
                     <f:facet name="footer">			
 		                <h:commandLink action="#{softwareBaseController.prepareList}" value="Regresar Lista" immediate="true"/>
 					</f:facet>

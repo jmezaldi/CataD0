@@ -54,11 +54,23 @@ public class SoftwareBase implements Serializable {
     @Column(name = "RELEASE")
     private String release;
     @Column(name = "FIX")
+    @Size(min = 1, max = 10)
     private String fix;
     @Column(name = "FECHA_FIN_SOPORTE")
     private java.util.Date fechaFinSoporte;
+    @Column(name = "LICENCIADO")
+    @Size(min = 1, max = 10)
+    private String licenciado;
     
-    public java.util.Date getFechaFinSoporte() {
+    public String getLicenciado() {
+		return licenciado;
+	}
+
+	public void setLicenciado(String licenciado) {
+		this.licenciado = licenciado;
+	}
+
+	public java.util.Date getFechaFinSoporte() {
 		return fechaFinSoporte;
 	}
 

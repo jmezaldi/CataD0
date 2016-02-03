@@ -175,35 +175,35 @@ public class ControladorReporte implements Serializable{
 	public void Aplicacion() {		
 
 		
-		/**
-		 * Generando Reporte Reporte_AplicacionXBaseDato.xhtml
-		 * **/
-		String path_jasperFileName_1 	= rutaBase + "resources\\reporte\\report_aplicacion_x_bd.jasper";    
-		String path_pdfFileName_1 	= rutaBase + "resources\\pdf\\report_aplicacion_x_bd.pdf";
-		//cargando los datos
-		HashMap<String, Object> param1 = new HashMap<String, Object>();		
-		param1.put("null", null);
-		generarReporte(path_jasperFileName_1,param1,path_pdfFileName_1);
-		
-		/**
-		 * Generando Reporte Reporte_BaseDatoXAplicacion.xhtml
-		 * **/
-		String path_jasperFileName_2 	= rutaBase + "resources\\reporte\\reporte_bd_x_aplicacion.jasper";    
-		String path_pdfFileName_2 		= rutaBase + "resources\\pdf\\reporte_bd_x_aplicacion.pdf";
-		//cargando los datos
-		HashMap<String, Object> param2 	= new HashMap<String, Object>();		
-		param1.put("null", null);
-		generarReporte(path_jasperFileName_2,param2,path_pdfFileName_2);
-		
-		/**
-		 * Generando Reporte Reporte_ServidorSWBaseAplicacion.xhtml
-		 * **/
-		String path_jasperFileName_3 	= rutaBase + "resources\\reporte\\reporte_servidor_softwarebase_aplicacion.jasper";    
-		String path_pdfFileName_3 		= rutaBase + "resources\\pdf\\reporte_servidor_softwarebase_aplicacion.pdf";
-		//cargando los datos
-		HashMap<String, Object> param3 = new HashMap<String, Object>();		
-		param1.put("null", null);
-		generarReporte(path_jasperFileName_3,param3,path_pdfFileName_3);
+//		/**
+//		 * Generando Reporte Reporte_AplicacionXBaseDato.xhtml
+//		 * **/
+//		String path_jasperFileName_1 	= rutaBase + "resources\\reporte\\report_aplicacion_x_bd.jasper";    
+//		String path_pdfFileName_1 	= rutaBase + "resources\\pdf\\report_aplicacion_x_bd.pdf";
+//		//cargando los datos
+//		HashMap<String, Object> param1 = new HashMap<String, Object>();		
+//		param1.put("null", null);
+//		generarReporte(path_jasperFileName_1,param1,path_pdfFileName_1);
+//		
+//		/**
+//		 * Generando Reporte Reporte_BaseDatoXAplicacion.xhtml
+//		 * **/
+//		String path_jasperFileName_2 	= rutaBase + "resources\\reporte\\reporte_bd_x_aplicacion.jasper";    
+//		String path_pdfFileName_2 		= rutaBase + "resources\\pdf\\reporte_bd_x_aplicacion.pdf";
+//		//cargando los datos
+//		HashMap<String, Object> param2 	= new HashMap<String, Object>();		
+//		param1.put("null", null);
+//		generarReporte(path_jasperFileName_2,param2,path_pdfFileName_2);
+//		
+//		/**
+//		 * Generando Reporte Reporte_ServidorSWBaseAplicacion.xhtml
+//		 * **/
+//		String path_jasperFileName_3 	= rutaBase + "resources\\reporte\\reporte_servidor_softwarebase_aplicacion.jasper";    
+//		String path_pdfFileName_3 		= rutaBase + "resources\\pdf\\reporte_servidor_softwarebase_aplicacion.pdf";
+//		//cargando los datos
+//		HashMap<String, Object> param3 = new HashMap<String, Object>();		
+//		param1.put("null", null);
+//		generarReporte(path_jasperFileName_3,param3,path_pdfFileName_3);
 		
 	}
 

@@ -25,13 +25,18 @@
             </h:panelGroup>
             <h:form>
                 <p:panelGrid columns="2">
-                	<f:facet name="header">FORMULARIO</f:facet>
                     <h:outputLabel value="ID Sofware Base" for="id" />
                     <h:inputText id="id" value="#{softwareBaseController.selected.id}" title="#{bundle.EditSoftwareBaseTitle_id}" required="true" requiredMessage="#{bundle.EditSoftwareBaseRequiredMessage_id}"/>
                     <h:outputLabel value="Nombre" for="nombre" />
                     <h:inputText id="nombre" size="60" value="#{softwareBaseController.selected.nombre}" title="#{bundle.EditSoftwareBaseTitle_nombre}" required="true" requiredMessage="#{bundle.EditSoftwareBaseRequiredMessage_nombre}"/>
                     <h:outputLabel value="Release" for="release" />
                     <h:inputText id="release" size="60" value="#{softwareBaseController.selected.release}" title="#{bundle.EditSoftwareBaseTitle_release}" required="true" requiredMessage="#{bundle.EditSoftwareBaseRequiredMessage_release}"/>
+                    <h:outputLabel value="Fix" for="fix" />
+                    <h:inputText id="fix" size="10" value="#{softwareBaseController.selected.fix}" title="#{bundle.EditSoftwareBaseTitle_fix}" required="false" requiredMessage="#{bundle.EditSoftwareBaseRequiredMessage_fix}"/>
+                    <h:outputLabel value="Licenciado" for="licenciado" />
+                    <h:inputText id="licenciado" size="10" value="#{softwareBaseController.selected.licenciado}" title="#{bundle.EditSoftwareBaseTitle_licenciado}" required="false" requiredMessage="#{bundle.EditSoftwareBaseRequiredMessage_licenciado}"/>
+                    
+                    
                     <f:facet name="footer">                    	
                     	<h:outputText value="&#160;" /><h:outputText value="&#160;" />	
 						<h:commandLink action="#{softwareBaseController.update}" value="Guardar">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="warn" name="MyApp" packages="">
 	<Appenders>
-		<RollingFile name="RollingFile" fileName="/Apps/SistemaUnique" filePattern="SistemaForecast-%d{MM-dd-yyyy}.log">
+		<RollingFile name="RollingFile" fileName="/Apps/SistemaUnique" filePattern="SistemaCatalogo-%d{MM-dd-yyyy}.log">
 			<PatternLayout>
 				<Pattern>[%d{yyyy-MM-dd HH:mm:ss} %p] %l: %m%n</Pattern>
 			</PatternLayout>

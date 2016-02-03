@@ -64,8 +64,8 @@ public class Diccionario implements Serializable, Comparable<Diccionario> {
 	public Diccionario() {
 	}
 	
-	public Diccionario(Long id,String nombre, String descripcion, String descripcionLarga) {
-		this.id = id;
+	public Diccionario(String nombre, String descripcion, String descripcionLarga) {
+		//this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.descripcion = descripcionLarga;

@@ -31,6 +31,7 @@ public class DiccionarioService {
 			Entidad element = litr_entidad.next();
 			String ID = element.getId().toString();
 			String ID_BD = element.getIdBaseDatos().getId().toString();
+//			JM:Revisar
 			if (ID_BD.equals("22")) {
 				String NOMBRE = element.getNombre();
 				String DESCRIPCION = element.getDescripcion();

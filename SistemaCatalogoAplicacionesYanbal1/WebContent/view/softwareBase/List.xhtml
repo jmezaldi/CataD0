@@ -37,17 +37,20 @@
                          <p:column headerText="#" style="width:4%;">
                          	<h:outputText value="#{rowIndex+1}" /> 
                          </p:column>
-						 <p:column headerText="Nombre" filterBy="#{item.nombre}" sortBy="#{item.nombre}" style="width:46%;">
+						 <p:column headerText="Nombre" filterBy="#{item.nombre}" sortBy="#{item.nombre}" style="width:30%;">
 						 	<h:outputText value="#{item.nombre}" />
 						 </p:column>
-						 <p:column headerText="Release" filterBy="#{item.release}" sortBy="#{item.release}" style="width:20%;">
+						 <p:column headerText="Release" filterBy="#{item.release}" sortBy="#{item.release}" style="width:10%;">
 						 	<h:outputText value="#{item.release}" />
 						 </p:column>
-						 <p:column headerText="Fix" filterBy="#{item.fix}" sortBy="#{item.fix}" style="width:11%;">
+						 <p:column headerText="Fix" sortBy="#{item.fix}" style="width:8%;">
 						 	<h:outputText value="#{item.fix}" />
 						 </p:column>
-						 <p:column headerText="Fin Soporte" filterBy="#{item.fechaFinSoporte}" sortBy="#{item.fechaFinSoporte}" style="width:11%;">
+						 <p:column headerText="Fin Soporte"  sortBy="#{item.fechaFinSoporte}" style="width:10%;">
 						 	<h:outputText value="#{item.fechaFinSoporte}"><f:convertDateTime type="date" pattern="dd-MM-yyyy"/></h:outputText>
+						 </p:column>
+						 <p:column headerText="Licenciado" sortBy="#{item.licenciado}" style="width:8%;">
+						 	<h:outputText value="#{item.licenciado}" />
 						 </p:column>
                          <p:column rendered="#{backLogin.usuario.perfil == 'Arquitectura'}" headerText="Editar" style="width:4%;" >
                             <h:commandLink action="#{softwareBaseController.prepareEditCust(item)}" >
