@@ -11,9 +11,6 @@
 		<authentication-alias name="dataSourceArquiteDB2" />
 	</resource-ref>
 	
-	<resource-ref name="MailSession"
-		binding-name="mail/yanbalMailSession">
-		<authentication-alias name="MailSession" />
-	</resource-ref>
+
 	
 </web-bnd>
