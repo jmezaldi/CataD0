@@ -32,7 +32,7 @@
                     <h:outputLabel value="Release" for="release" />
                     <h:inputText id="release" size="60" value="#{softwareBaseController.selected.release}" title="#{bundle.CreateSoftwareBaseTitle_release}" required="true" requiredMessage="#{bundle.CreateSoftwareBaseRequiredMessage_release}"/>
                     <h:outputLabel value="Fix" for="fix" />
-                    <h:inputText id="fix" size="10" value="#{softwareBaseController.selected.fix}" title="#{bundle.EditSoftwareBaseTitle_fix}" required="false" requiredMessage="#{bundle.EditSoftwareBaseRequiredMessage_fix}"/>
+                    <h:inputText id="fix" size="10" value="#{softwareBaseController.selected.fix}" title="#{bundle.CreatetSoftwareBaseTitle_fix}" required="false" requiredMessage="#{bundle.CreateSoftwareBaseRequiredMessage_fix}"/>
                     <h:outputLabel value="Fabricante" for="idFabricante" />
                     <p:selectOneMenu id="idFabricante" value="#{softwareBaseController.selected.idFabricante}">
                         <f:selectItems value="#{fabricanteController.itemsAvailableSelectOne}" var="entry"

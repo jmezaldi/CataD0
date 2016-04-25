@@ -103,7 +103,7 @@ public class Aplicacion implements Serializable {
     @JoinTable(name = "PAIS_X_APLICACION", joinColumns = {
         @JoinColumn(name = "ID_APLICACION", referencedColumnName = "ID")}, inverseJoinColumns = {
         @JoinColumn(name = "ID_PAIS", referencedColumnName = "ID")})
-    @ManyToMany
+    
     private Collection<Pais> paisCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "aplicacion")
     private Collection<AplicacionXBaseDatos> aplicacionXBaseDatosCollection;
@@ -116,7 +116,7 @@ public class Aplicacion implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idAplicacion")
     private Collection<Certificacion> certificacionCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idAplicacion")
-    private Collection<AplicacionXSolucion> aplicacionXSolucionCollection;
+    private@ManyToMany Collection<AplicacionXSolucion> aplicacionXSolucionCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "aplicacion")
     private Collection<AplicacionXSubProcesoNegocio> aplicacionXSubProcesoNegocioCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idAplicacion")

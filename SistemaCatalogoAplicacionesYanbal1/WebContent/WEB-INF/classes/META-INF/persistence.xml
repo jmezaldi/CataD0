@@ -27,7 +27,6 @@
 		<class>com.yanbal.catalogo.bean.Funcion</class>
 		<class>com.yanbal.catalogo.bean.InterfaceBatch</class>
 		<class>com.yanbal.catalogo.bean.InterfaceBatchPK</class>
-		<class>com.yanbal.catalogo.bean.Pais</class>
 		<class>com.yanbal.catalogo.bean.PlataformaCliente</class>
 		<class>com.yanbal.catalogo.bean.Proceso</class>
 		<class>com.yanbal.catalogo.bean.Servicio</class>
@@ -46,8 +45,6 @@
 		<class>com.yanbal.catalogo.bean.AplicacionXArchivoDesplegablePK</class>
 		<class>com.yanbal.catalogo.bean.FrameworkXAplicacion</class>
 		<class>com.yanbal.catalogo.bean.FrameworkXAplicacionPK</class>
-		<class>com.yanbal.catalogo.bean.PaisXAplicacion</class>
-		<class>com.yanbal.catalogo.bean.PaisXAplicacionPK</class>
 		<class>com.yanbal.catalogo.bean.SoftwareBaseInstanciaXAplicacion</class>
 		<class>com.yanbal.catalogo.bean.SoftwareBaseInstanciaXAplicacionPK</class>
 		<class>com.yanbal.catalogo.bean.SoftwareBaseInstanciaXServidor</class>

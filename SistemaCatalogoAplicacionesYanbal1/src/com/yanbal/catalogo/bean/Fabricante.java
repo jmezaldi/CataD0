@@ -41,7 +41,7 @@ public class Fabricante implements Serializable {
     @Size(min = 1, max = 40)
     @Column(name = "NOMBRE")
     private String nombre;
-    @Size(min = 1, max = 40)
+    @Size(min = 0, max = 400)
     @Column(name = "DESCRIPCION")
     private String descripcion;
 

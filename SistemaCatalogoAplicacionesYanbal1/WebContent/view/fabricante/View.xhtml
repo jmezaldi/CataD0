@@ -25,11 +25,11 @@
             <h:form>
                 <p:panelGrid columns="2">
                     <h:outputText value="ID Fabricante"/>
-                    <h:outputText value="#{fabricanteController.selected.id}" title="#{bundle.ViewAmbienteTitle_id}"/>
+                    <h:outputText value="#{fabricanteController.selected.id}" title="#{bundle.ViewFabricanteTitle_id}"/>
                     <h:outputText value="Nombre"/>
-                    <h:outputText value="#{fabricanteController.selected.nombre}" title="#{bundle.ViewAmbienteTitle_nombre}"/>
+                    <h:outputText value="#{fabricanteController.selected.nombre}" title="#{bundle.ViewFabricanteTitle_nombre}"/>
                     <h:outputText value="Descripción"/>
-                    <h:outputText value="#{fabricanteController.selected.descripcion}" title="#{bundle.ViewAmbienteTitle_descripcion}"/>
+                    <h:outputText value="#{fabricanteController.selected.descripcion}" title="#{bundle.ViewFabricanteTitle_descripcion}"/>
                     <f:facet name="footer">			
 		                <h:commandLink action="#{fabricanteController.prepareList}" value="Regresar Lista" immediate="true"/>
 					</f:facet>                    

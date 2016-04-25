@@ -37,10 +37,12 @@
                          <p:column headerText="#" style="width:4%;"> 
                          	<h:outputText value="#{rowIndex+1}" /> 
                          </p:column>
-                         <p:column headerText="Nombre" filterBy="#{item.nombre}" style="width:55%;" sortBy="#{item.nombre}">
+                         <p:column headerText="Nombre" filterBy="#{item.nombre}" style="width:30%;" sortBy="#{item.nombre}">
                          	<h:outputText value="#{item.nombre}" /> 
                           </p:column>
-
+                         <p:column headerText="Descripción" filterBy="#{item.descripcion}" style="width:65%;" sortBy="#{item.descripcion}">
+                         	<h:outputText value="#{item.nombre}" /> 
+                          </p:column>
                          <p:column headerText="Editar" style="width:4%;" rendered="#{backLogin.usuario.perfil == 'Arquitectura'}">
                             <h:commandLink action="#{fabricanteController.prepareEditCust(item)}" >
                             		<h:graphicImage value="/resources/images/editar.png" alt="Editar" width="20" height="20" />

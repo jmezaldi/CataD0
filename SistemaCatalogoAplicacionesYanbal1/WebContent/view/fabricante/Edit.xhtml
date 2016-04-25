@@ -27,9 +27,9 @@
                 <h:outputLabel value="ID Ambiente" for="id" />
                 <h:inputText id="id" size="20" value="#{fabricanteController.selected.id}" title="#{bundle.EditFabricanteTitle_id}" required="true" requiredMessage="#{bundle.EditFabricanteRequiredMessage_id}"/>                
 				<h:outputLabel value="Nombre" for="nombre" />
-				<h:inputText size="40" id="nombre" value="#{fabricanteController.selected.nombre}"  title="#{bundle.CreatefabricanteTitle_nombre}" required="true" requiredMessage="#{bundle.CreateFabricanteRequiredMessage_nombre}"/>
+				<h:inputText size="40" id="nombre" value="#{fabricanteController.selected.nombre}"  title="#{bundle.EditFabricanteTitle_nombre}" required="true" requiredMessage="#{bundle.CreateFabricanteRequiredMessage_nombre}"/>
 				<h:outputLabel value="Descripción" for="descripcion" />
-				<h:inputText size="100" id="descripcion" value="#{fabricanteController.selected.descripcion}"  title="#{bundle.CreateFabricanteTitle_descripcion}" required="false" requiredMessage="#{bundle.CreateFabricanteRequiredMessage_descripcion}"/>
+				<h:inputText size="100" id="descripcion" value="#{fabricanteController.selected.descripcion}"  title="#{bundle.EditFabricanteTitle_descripcion}" required="false" />
 
 					<f:facet name="footer">                    	
                     	<h:outputText value="&#160;" /><h:outputText value="&#160;" />	
