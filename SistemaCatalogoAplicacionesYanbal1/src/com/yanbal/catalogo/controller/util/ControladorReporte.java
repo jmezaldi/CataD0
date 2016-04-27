@@ -37,9 +37,7 @@ public class ControladorReporte implements Serializable{
 
 	@PostConstruct
 	public void inicializar() {
-		System.out.println("Obteniendo la conexion.");
-		conexion = UtilBaseDatos.getConexion();
-		System.out.println("Conexion obtenida.");
+		//conexion =  UtilBaseDatos.getConexion();
 	}
 	
 	public void procesarReportes()
@@ -53,10 +51,6 @@ public class ControladorReporte implements Serializable{
 		String path_jasperFileName 	= rutaBase + "resources\\reporte\\report1.jasper";    
 		String path_pdfFileName 	= rutaBase + "resources\\pdf\\aplicacion_x_solucion.pdf";
 		String param_Solucion 	= "21";
-		System.out.println(path_imageFile);
-		System.out.println(path_jasperFileName);
-		System.out.println(path_pdfFileName);
-		System.out.println(param_Solucion);
 		
 		//cargando los datos
 		HashMap<String, Object> parametros = new HashMap<String, Object>();

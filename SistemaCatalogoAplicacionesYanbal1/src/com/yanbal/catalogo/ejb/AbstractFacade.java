@@ -32,7 +32,6 @@ public abstract class AbstractFacade<T> {
 
     public void edit(T entity) {
         getEntityManager().merge(entity);
-        System.out.println("class AbstractFacade >>>> "+entity.toString());
     }
 
     public void remove(T entity) {
@@ -46,7 +45,6 @@ public abstract class AbstractFacade<T> {
     public List<T> findAll() {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
         cq.select(cq.from(entityClass));
-        System.out.println(">>> ALL  : "+getEntityManager().createQuery(cq).getResultList().size());
         return getEntityManager().createQuery(cq).getResultList();
     }
 

@@ -59,7 +59,7 @@ public class ControladorLogin implements Serializable{
 				RequestContext.getCurrentInstance().addCallbackParam("loggedIn", true);
 				redigirPagina("/faces/menu.xhtml");
 			} else {
-				logger.info("Login incorrecto. Username: " + username + " Password: " + password);
+				logger.info("Login incorrecto. Username: " + username );
 				MensajesJSF.mostrarMensaje("Login", "Credenciales incorrectas");
 				RequestContext.getCurrentInstance().addCallbackParam("loggedIn", false);
 			}

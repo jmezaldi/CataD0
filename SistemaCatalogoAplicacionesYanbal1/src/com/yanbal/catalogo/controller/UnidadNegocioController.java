@@ -1,9 +1,10 @@
 package com.yanbal.catalogo.controller;
 
-import com.yanbal.catalogo.bean.Pais;
+import com.yanbal.catalogo.bean.UnidadNegocio;
 import com.yanbal.catalogo.controller.util.JsfUtil;
 import com.yanbal.catalogo.controller.util.PaginationHelper;
-import com.yanbal.catalogo.ejb.PaisFacade;
+import com.yanbal.catalogo.ejb.UnidadNegocioFacade;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,34 +21,34 @@ import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
 
-@ManagedBean(name = "paisController")
+@ManagedBean(name = "unidadNegocioController")
 @SessionScoped
-public class PaisController implements Serializable {
+public class UnidadNegocioController implements Serializable {
 
-	private Pais current;
+	private UnidadNegocio current;
 	private DataModel items = null;
 	@EJB
-	private com.yanbal.catalogo.ejb.PaisFacade ejbFacade;
+	private com.yanbal.catalogo.ejb.UnidadNegocioFacade ejbFacade;
 	@EJB
 	private com.yanbal.catalogo.ejb.UsuarioFacade ejbFacadeUsuario;
 	private PaginationHelper pagination;
 	private int selectedItemIndex;
-	private List<Pais> filteredItems;
+	private List<UnidadNegocio> filteredItems;
 	UtilController util = new UtilController();
 	private FacesContext fCtx;
 
-	public PaisController() {
+	public UnidadNegocioController() {
 	}
 
-	public Pais getSelected() {
+	public UnidadNegocio getSelected() {
 		if (current == null) {
-			current = new Pais();
+			current = new UnidadNegocio();
 			selectedItemIndex = -1;
 		}
 		return current;
 	}
 
-	private PaisFacade getFacade() {
+	private UnidadNegocioFacade getFacade() {
 		return ejbFacade;
 	}
 
@@ -77,14 +78,14 @@ public class PaisController implements Serializable {
 	}
 
 	public String prepareView() {
-		current = (Pais) getItems().getRowData();
+		current = (UnidadNegocio) getItems().getRowData();
 		selectedItemIndex = pagination.getPageFirstItem()
 				+ getItems().getRowIndex();
 		return "View";
 	}
 
 	public String prepareCreate() {
-		current = new Pais();
+		current = new UnidadNegocio();
 		selectedItemIndex = -1;
 		return "Create";
 	}
@@ -97,10 +98,10 @@ public class PaisController implements Serializable {
 		try {
 			getFacade().create(current);
 			JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle")
-					.getString("PaisCreated"));
+					.getString("UnidadNegocioCreated"));
 			util.sendEmailAccounts(email,ejbFacadeUsuario.findAll(),
 					ResourceBundle.getBundle("/Bundle").getString("ADD")
-							+ current.getCod() + " - " + current.getNombre(),
+							+ current.getCodigo() + " - " + current.getNombre(),
 					ResourceBundle.getBundle("/Bundle").getString("EVENTO_ADD"));
 			return prepareCreate();
 		} catch (Exception e) {
@@ -111,12 +112,12 @@ public class PaisController implements Serializable {
 	}
 
 	public String prepareEdit() {
-		current = (Pais) getItems().getRowData();
+		current = (UnidadNegocio) getItems().getRowData();
 		selectedItemIndex = pagination.getPageFirstItem()
 				+ getItems().getRowIndex();
 		return "Edit";
 	}
-	public String prepareEditCust(Pais obj) {
+	public String prepareEditCust(UnidadNegocio obj) {
 		current = obj;
 		selectedItemIndex = pagination.getPageFirstItem()
 				+ getItems().getRowIndex();
@@ -130,10 +131,10 @@ public class PaisController implements Serializable {
 		try {
 			getFacade().edit(current);
 			JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle")
-					.getString("PaisUpdated"));
+					.getString("UnidadNegocioUpdated"));
 			util.sendEmailAccounts(email,ejbFacadeUsuario.findAll(),
 					ResourceBundle.getBundle("/Bundle").getString("EDIT")
-							+ current.getCod() + " - " + current.getNombre(),
+							+ current.getCodigo() + " - " + current.getNombre(),
 					ResourceBundle.getBundle("/Bundle")
 							.getString("EVENTO_EDIT"));
 			return "View";
@@ -145,7 +146,7 @@ public class PaisController implements Serializable {
 	}
 
 	public String destroy() {
-		current = (Pais) getItems().getRowData();
+		current = (UnidadNegocio) getItems().getRowData();
 		selectedItemIndex = pagination.getPageFirstItem()
 				+ getItems().getRowIndex();
 		performDestroy();
@@ -153,7 +154,7 @@ public class PaisController implements Serializable {
 		return "List";
 	}
 
-	public String destroyCust(Pais obj) {
+	public String destroyCust(UnidadNegocio obj) {
 
 		current = obj;
 		selectedItemIndex = pagination.getPageFirstItem()
@@ -184,7 +185,7 @@ public class PaisController implements Serializable {
 		try {
 			getFacade().remove(current);
 			JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle")
-					.getString("PaisDeleted"));
+					.getString("UnidadNegocioDeleted"));
 			util.sendEmailAccounts(email,ejbFacadeUsuario.findAll(),
 					ResourceBundle.getBundle("/Bundle").getString("DELETE")
 							+ current.getId() + " - " + current.getNombre(),
@@ -215,7 +216,7 @@ public class PaisController implements Serializable {
 	public DataModel getItems() {
 		if (items == null) {
 			items = getPagination().createPageDataModel();
-			filteredItems = new ArrayList<Pais>(ejbFacade.findAll());
+			filteredItems = new ArrayList<UnidadNegocio>(ejbFacade.findAll());
 
 		}
 		return items;
@@ -245,15 +246,15 @@ public class PaisController implements Serializable {
 		return JsfUtil.getSelectItems(ejbFacade.findAll(), true);
 	}
 
-	@FacesConverter(forClass = Pais.class)
-	public static class PaisControllerConverter implements Converter {
+	@FacesConverter(forClass = UnidadNegocio.class)
+	public static class UnidadNegocioControllerConverter implements Converter {
 
 		public Object getAsObject(FacesContext facesContext,
 				UIComponent component, String value) {
 			if (value == null || value.length() == 0) {
 				return null;
 			}
-			PaisController controller = (PaisController) facesContext
+			UnidadNegocioController controller = (UnidadNegocioController) facesContext
 					.getApplication()
 					.getELResolver()
 					.getValue(facesContext.getELContext(), null,
@@ -278,22 +279,22 @@ public class PaisController implements Serializable {
 			if (object == null) {
 				return null;
 			}
-			if (object instanceof Pais) {
-				Pais o = (Pais) object;
+			if (object instanceof UnidadNegocio) {
+				UnidadNegocio o = (UnidadNegocio) object;
 				return getStringKey(o.getId());
 			} else {
 				throw new IllegalArgumentException("object " + object
 						+ " is of type " + object.getClass().getName()
-						+ "; expected type: " + PaisController.class.getName());
+						+ "; expected type: " + UnidadNegocioController.class.getName());
 			}
 		}
 	}
 
-	public List<Pais> getFilteredItems() {
+	public List<UnidadNegocio> getFilteredItems() {
 		return filteredItems;
 	}
 
-	public void setFilteredItems(List<Pais> filteredItems) {
+	public void setFilteredItems(List<UnidadNegocio> filteredItems) {
 		this.filteredItems = filteredItems;
 	}
 

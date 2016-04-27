@@ -51,7 +51,11 @@
 		<class>com.yanbal.catalogo.bean.SoftwareBaseInstanciaXServidorPK</class>
 		<class>com.yanbal.catalogo.bean.Diccionario</class>
 		<class>com.yanbal.catalogo.bean.Fabricante</class>
-		<class>com.yanbal.catalogo.bean.Area</class>			
+		<class>com.yanbal.catalogo.bean.Area</class>		
+		<class>com.yanbal.catalogo.bean.Pais</class>
+		<class>com.yanbal.catalogo.bean.PaisXAplicacion</class>
+		<class>com.yanbal.catalogo.bean.PaisXAplicacionPK</class>
+		<class>com.yanbal.catalogo.bean.UnidadNegocio</class>	
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>		
 	    <properties>    
 	    	<property name="openjpa.jdbc.Schema" value="CATALOGO"/>
